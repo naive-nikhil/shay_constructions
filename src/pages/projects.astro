@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+	{
+		title: 'Samsara Villas',
+		img: '/assets/images/work1.png',
+		desc: 'Premium residential villas engineered for longevity and refined living.',
+		tags: 'Residential • Villas • Lucknow',
+	},
+	{
+		title: 'Jashn Elevate Experience Centre',
+		img: '/assets/images/work2.png',
+		desc: 'Contemporary sales and experience space for a flagship development.',
+		tags: 'Commercial • Interiors • Retail',
+	},
+	{
+		title: '1 OAK–Natura Infrastructure',
+		img: '/assets/images/work3.png',
+		desc: 'Large-scale landscape and backbone infrastructure for a gated community.',
+		tags: 'Infrastructure • Landscape • Development',
+	},
+	{
+		title: 'Atal Bihari Vajpayee Medical University',
+		img: '/assets/images/work4.png',
+		desc: 'Institutional campus delivered to strict government standards and timelines.',
+		tags: 'Institutional • University • Public',
+	},
+	{
+		title: 'Mahila Battalion Residential',
+		img: '/assets/images/work5.png',
+		desc: 'Multi-storey residential structure with precision engineering through completion.',
+		tags: 'Towers • Residential • G+9',
+	},
+	{
+		title: '600-Bed Command Hospital',
+		img: '/assets/images/work1.png',
+		desc: 'Specialized healthcare infrastructure with full OHES compliance.',
+		tags: 'Government • Healthcare • Hospitals',
+	},
+];
+---
+<BaseLayout title="Projects - Shay Construction" description="Selected construction and engineering projects by Shay Construction.">
+
+	<div class="breadcumb-area d-flex align-items-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcumb-content">
+						<h1>Projects</h1>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li>Projects</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="shay-projects-page upper">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-12">
+					<div class="section-title upper pb-3">
+						<div class="main-title wow fadeInUp">
+							<h1>Works</h1>
+						</div>
+						<div class="sub-title wow fadeInUp" data-wow-delay="0.1s">
+							<h2>Featured <span>Projects</span></h2>
+						</div>
+					</div>
+					<div class="shay-projects-deco shay-projects-deco-a bounce-animate3">
+						<img src="/assets/images/resource/counter-shape.png" alt="">
+					</div>
+					<div class="shay-projects-deco shay-projects-deco-b bounce-animate2">
+						<img src="/assets/images/resource/counter-shap.png" alt="">
+					</div>
+					<div class="shay-projects-deco shay-projects-deco-c dance">
+						<img src="/assets/images/resource/border.png" alt="">
+					</div>
+				</div>
+			</div>
+
+			<p class="shay-projects-lede wow fadeInUp" data-wow-delay="0.15s">
+				We have delivered excellence across over <strong>45 landmark projects</strong> — from residential enclaves and commercial landmarks to institutional campuses and healthcare infrastructure.
+			</p>
+
+			<div class="shay-projects-grid">
+				{projects.map((p, i) => (
+					<article
+						class="shay-project-card wow fadeInUp"
+						data-wow-delay={`${0.08 * i}s`}
+					>
+						<h2 class="shay-project-card-title">{p.title}</h2>
+						<div class="shay-project-card-media">
+							<img src={p.img} alt={p.title} loading="lazy" width="800" height="520" />
+						</div>
+						<div class="shay-project-card-footer">
+							<p class="shay-project-desc">{p.desc}</p>
+							<p class="shay-project-tags">{p.tags}</p>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+<style is:global>
+.shay-projects-page {
+	background: #fff;
+	padding: 100px 0 120px;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.shay-projects-page .container {
+	position: relative;
+	z-index: 2;
+}
+
+.shay-projects-deco {
+	position: absolute;
+	z-index: 0;
+	pointer-events: none;
+	opacity: 0.14;
+}
+
+.shay-projects-deco img {
+	max-width: 120px;
+	height: auto;
+	display: block;
+}
+
+.shay-projects-deco-a {
+	left: 2%;
+	top: 40px;
+}
+
+.shay-projects-deco-b {
+	right: 3%;
+	top: 20px;
+	text-align: right;
+}
+
+.shay-projects-deco-b img {
+	margin-left: auto;
+}
+
+.shay-projects-deco-c {
+	left: 35%;
+	top: 120px;
+	opacity: 0.1;
+}
+
+.shay-projects-lede {
+	max-width: 820px;
+	font-size: 17px;
+	line-height: 1.75;
+	color: #555;
+	margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+	position: relative;
+	z-index: 2;
+}
+
+.shay-projects-lede strong {
+	color: #1c4274;
+	font-weight: 700;
+}
+
+.shay-projects-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: clamp(36px, 5vw, 56px);
+	position: relative;
+	z-index: 2;
+}
+
+.shay-project-card {
+	padding: 28px 28px 32px;
+	border: 1px solid #e9ebec;
+	background: #fff;
+	position: relative;
+	transition: box-shadow 0.4s ease, border-color 0.35s ease, transform 0.4s ease;
+}
+
+/* Hover: top accent strip + soft lift + ring (no left edge bar) */
+.shay-project-card:hover {
+	border-color: rgba(28, 66, 116, 0.28);
+	box-shadow:
+		inset 0 3px 0 0 #1c4274,
+		0 0 0 1px rgba(28, 66, 116, 0.08),
+		0 18px 44px rgba(28, 66, 116, 0.11);
+	transform: translateY(-5px);
+}
+
+.shay-project-card-title {
+	font-size: clamp(1.25rem, 2vw, 1.45rem);
+	font-weight: 700;
+	color: #101010;
+	margin: 0 0 18px;
+	line-height: 1.25;
+	transition: color 0.3s ease;
+}
+
+.shay-project-card:hover .shay-project-card-title {
+	color: #1c4274;
+}
+
+.shay-project-card-media {
+	display: block;
+	overflow: hidden;
+	border-radius: 2px;
+	background: #f0f0f0;
+	aspect-ratio: 16 / 10;
+	border: 1px solid #ececec;
+	transition: border-color 0.35s ease;
+}
+
+.shay-project-card:hover .shay-project-card-media {
+	border-color: rgba(28, 66, 116, 0.25);
+}
+
+.shay-project-card-media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.55s cubic-bezier(0.33, 1, 0.68, 1), filter 0.45s ease;
+}
+
+.shay-project-card:hover .shay-project-card-media img {
+	transform: scale(1.06);
+	filter: brightness(1.03);
+}
+
+.shay-project-card-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 24px;
+	margin-top: 22px;
+	padding-top: 18px;
+	border-top: 1px solid #f0f0f0;
+	transition: border-color 0.35s ease;
+}
+
+.shay-project-card:hover .shay-project-card-footer {
+	border-top-color: rgba(28, 66, 116, 0.2);
+}
+
+.shay-project-desc {
+	flex: 1;
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #666;
+	max-width: 72%;
+}
+
+.shay-project-tags {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.5;
+	color: #777;
+	text-align: right;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.shay-project-card {
+	cursor: default;
+}
+
+@media (max-width: 991px) {
+	.shay-projects-deco-c {
+		display: none;
+	}
+
+	.shay-projects-grid {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
+	.shay-project-desc {
+		max-width: none;
+	}
+
+	.shay-project-card-footer {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.shay-project-tags {
+		text-align: left;
+		white-space: normal;
+	}
+}
+
+@media (max-width: 575px) {
+	.shay-projects-page {
+		padding: 70px 0 90px;
+	}
+
+	.shay-projects-deco-a,
+	.shay-projects-deco-b {
+		opacity: 0.08;
+	}
+
+	.shay-project-card {
+		padding: 22px 20px 26px;
+	}
+}
+</style>
+
+</BaseLayout>

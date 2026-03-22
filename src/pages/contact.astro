@@ -1,0 +1,368 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Contact Us - Shay Construction">
+
+	<div class="breadcumb-area d-flex align-items-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcumb-content">
+						<h1>Contact Us</h1>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li>Contact Us</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contact-area-inner upper shay-contact-page">
+		<div class="container-fluid shay-contact-fluid g-0 px-0">
+			<div class="row g-0 shay-contact-split">
+				<div class="col-lg-6 shay-contact-form-wrap">
+					<div class="single-contact-box upper wow fadeInRight shay-contact-form-inner">
+						<div class="section-title upper">
+							<div class="sub-title">
+								<h2>Collaborate with Our <br> Support Team</h2>
+							</div>
+						</div>
+						<div class="contact_from_box">
+							<form action="#" method="POST" id="dreamit-form" class="shay-contact-form">
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form_box shay-contact-field">
+											<label class="shay-contact-label" for="contact-name">Name</label>
+											<input type="text" name="name" id="contact-name" placeholder="" required autocomplete="name">
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form_box shay-contact-field">
+											<label class="shay-contact-label" for="contact-phone">Phone</label>
+											<input type="tel" name="phone" id="contact-phone" placeholder="" required autocomplete="tel">
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form_box shay-contact-field shay-contact-field-email">
+											<label class="shay-contact-label" for="contact-email">Email</label>
+											<div class="shay-contact-input-with-icon">
+												<input type="email" name="email" id="contact-email" placeholder="" autocomplete="email">
+												<i class="bi bi-envelope-fill shay-contact-field-icon" aria-hidden="true"></i>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form_box shay-contact-field">
+											<label class="shay-contact-label" for="contact-reason">Connect with us for?</label>
+											<div class="shay-contact-select-wrap">
+												<select name="reason" id="contact-reason">
+													<option value="hi" selected>Just Saying Hi</option>
+													<option value="project">New project inquiry</option>
+													<option value="quote">Request a quote</option>
+													<option value="partnership">Partnership</option>
+													<option value="other">Other</option>
+												</select>
+												<i class="bi bi-chevron-down shay-contact-select-icon" aria-hidden="true"></i>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form_box shay-contact-field">
+											<label class="shay-contact-label" for="message">Message</label>
+											<textarea name="message" id="message" cols="30" rows="6" placeholder=""></textarea>
+										</div>
+										<div class="shay-contact-submit-row">
+											<div class="quote_button shay-contact-submit-wrap">
+												<button class="btn" type="submit">Submit</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+							<div id="status"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 shay-contact-video-wrap p-0">
+					<div class="shay-contact-media wow fadeInLeft">
+						<video
+							class="shay-contact-video"
+							src="https://res.cloudinary.com/dinzuxodt/video/upload/v1774215529/5567710-hd_1920_1080_30fps_qhmo3x.mp4"
+							playsinline
+							preload="auto"
+							autoplay
+							muted
+							loop
+							aria-label="Construction showcase video"
+						></video>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<style is:global>
+/* Split section: flush video column, no outer side padding */
+.shay-contact-page.contact-area-inner {
+	background-color: #eceef1;
+	background-image: none;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	overflow: hidden;
+}
+
+.shay-contact-split {
+	min-height: min(92vh, 920px);
+	align-items: stretch;
+}
+
+.shay-contact-form-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3.5rem);
+	background: #ffffff;
+}
+
+.shay-contact-page .single-contact-box.upper {
+	left: 0 !important;
+	position: relative;
+}
+
+.shay-contact-form-inner {
+	width: 100%;
+	max-width: 520px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.shay-contact-form-inner .section-title.upper .sub-title h2 {
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+}
+
+/* Full-bleed video column */
+.shay-contact-video-wrap {
+	position: relative;
+	min-height: 280px;
+	background: #0a0a0a;
+}
+
+.shay-contact-media {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+}
+
+.shay-contact-media::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(105deg, rgba(236, 238, 241, 0.35) 0%, transparent 45%);
+	pointer-events: none;
+	z-index: 1;
+}
+
+.shay-contact-video {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	pointer-events: none;
+}
+
+/* Form — minimal reference style (labels, light fields, pill submit) */
+.shay-contact-page .shay-contact-label {
+	display: block;
+	font-size: 13px;
+	font-weight: 500;
+	color: #2a2a2a;
+	margin-bottom: 8px;
+	letter-spacing: 0.01em;
+}
+
+.shay-contact-page .shay-contact-field {
+	margin-bottom: 0;
+}
+
+.shay-contact-page .shay-contact-field input,
+.shay-contact-page .shay-contact-field textarea,
+.shay-contact-page .shay-contact-select-wrap select {
+	width: 100% !important;
+	background: #ececec !important;
+	color: #1a1a1a !important;
+	border: 1px solid #e4e4e4 !important;
+	border-radius: 2px !important;
+	box-shadow: none !important;
+	padding: 14px 16px !important;
+	margin: 0 0 20px !important;
+	font-size: 15px !important;
+	font-weight: 400 !important;
+	letter-spacing: 0 !important;
+	transition: border-color 0.2s ease, background 0.2s ease !important;
+}
+
+.shay-contact-page .shay-contact-field textarea {
+	min-height: 160px !important;
+	height: auto !important;
+	resize: vertical;
+	line-height: 1.5 !important;
+	margin-bottom: 0 !important;
+}
+
+.shay-contact-page .shay-contact-field input:focus,
+.shay-contact-page .shay-contact-field textarea:focus,
+.shay-contact-page .shay-contact-select-wrap select:focus {
+	outline: none !important;
+	border-color: #c8c8c8 !important;
+	background: #e8e8e8 !important;
+}
+
+/* Email + envelope icon */
+.shay-contact-page .shay-contact-input-with-icon {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.shay-contact-page .shay-contact-input-with-icon input {
+	padding-right: 44px !important;
+	margin-bottom: 0 !important;
+}
+
+.shay-contact-page .shay-contact-field-icon {
+	position: absolute;
+	right: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 16px;
+	color: #2d8a54;
+	pointer-events: none;
+	line-height: 1;
+}
+
+/* Select + chevron */
+.shay-contact-page .shay-contact-select-wrap {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.shay-contact-page .shay-contact-select-wrap select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding-right: 42px !important;
+	cursor: pointer;
+	margin-bottom: 0 !important;
+}
+
+.shay-contact-page .shay-contact-select-icon {
+	position: absolute;
+	right: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 14px;
+	color: #444;
+	pointer-events: none;
+	line-height: 1;
+}
+
+/* Submit — black pill, left-aligned, compact */
+.shay-contact-page .shay-contact-submit-row {
+	text-align: left;
+	margin-top: 4px;
+}
+
+.shay-contact-page .shay-contact-submit-wrap.quote_button {
+	display: inline-block;
+	width: auto !important;
+	margin-top: 0;
+	background: #0a0a0a !important;
+	border-radius: 999px !important;
+	border: none !important;
+	box-shadow: none !important;
+	overflow: visible;
+	transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.shay-contact-page .shay-contact-submit-wrap.quote_button::before {
+	display: none !important;
+}
+
+.shay-contact-page .shay-contact-submit-wrap .btn {
+	width: auto !important;
+	min-width: unset;
+	padding: 12px 32px !important;
+	font-size: 14px !important;
+	font-weight: 500 !important;
+	letter-spacing: 0.02em !important;
+	color: #fff !important;
+	background: transparent !important;
+	border-radius: 999px !important;
+	text-transform: none !important;
+}
+
+.shay-contact-page .shay-contact-submit-wrap.quote_button:hover {
+	background: #1c1c1c !important;
+	transform: translateY(-1px);
+}
+
+.shay-contact-page .shay-contact-submit-wrap.quote_button:hover .btn {
+	color: #fff !important;
+}
+
+.shay-contact-page .shay-contact-submit-wrap.quote_button:active {
+	transform: translateY(0);
+}
+
+@media (max-width: 991px) {
+	.shay-contact-split {
+		min-height: 0;
+	}
+
+	.shay-contact-video-wrap {
+		min-height: 42vh;
+		order: -1;
+	}
+
+	.shay-contact-media {
+		position: absolute;
+		inset: 0;
+	}
+
+	.shay-contact-form-wrap {
+		padding-top: 3rem;
+		padding-bottom: 4rem;
+	}
+}
+
+@media (max-width: 575px) {
+	.shay-contact-video-wrap {
+		min-height: 38vh;
+	}
+}
+</style>
+
+	<div class="map-section">
+		<div class="container">
+			<div class="row mg-pt">
+				<div class="col-lg-12 p-0">
+					<iframe
+						title="Shay Construction — office location map"
+						src="https://maps.google.com/maps?q=26.793463274616514,81.00606443450619&hl=en&z=16&ie=UTF8&iwloc=B&output=embed"
+						width="1920"
+						height="520"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</BaseLayout>
