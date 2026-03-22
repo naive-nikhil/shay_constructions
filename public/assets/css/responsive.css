@@ -2702,3 +2702,205 @@
     object-fit: cover !important;
     object-position: center !important;
 }
+
+/* ========== Shay Construction — mobile: logo in meanmenu bar + home hero image ========== */
+
+/* Mobile: mean bar + real logo link lives in .shay-mobile-nav-wrap (not ::before — that can’t link home) */
+.mobile-menu-area .mean-container .mean-bar {
+	background: #fff !important;
+	border-bottom: none !important;
+	min-height: 56px;
+}
+
+/* Beat .sticky { background: #101010 !important } from style.css — mobile bar must stay white */
+.shay-mobile-nav-wrap,
+.mobile-menu-area.shay-mobile-nav-wrap.sticky {
+	background: #fff !important;
+}
+
+.shay-mobile-nav-wrap {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	border-bottom: 1px solid #e8e8e8;
+	padding: 4px 8px 4px 10px;
+	gap: 6px;
+}
+
+.shay-mobile-logo-link {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	line-height: 0;
+	text-decoration: none;
+	padding: 4px 6px;
+	background: transparent !important;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.shay-mobile-logo-link img {
+	height: 52px;
+	width: auto;
+	max-width: min(188px, 56vw);
+	object-fit: contain;
+}
+
+.shay-mobile-nav-wrap .mobile-menu {
+	flex: 1;
+	min-width: 0;
+	border-bottom: none !important;
+	background: transparent !important;
+}
+
+/* Shay — larger logo in desktop / tablet header */
+.hendre_nav_manu .logo_img img,
+.hendre_nav_manu .main_sticky img {
+	max-width: 120px !important;
+	height: auto !important;
+}
+
+/* Hide decorative “logo” slot in mean-bar — we use .shay-mobile-logo-link */
+.shay-mobile-nav-wrap .mean-container .mean-bar::before {
+	content: none !important;
+	display: none !important;
+	background: none !important;
+	width: 0 !important;
+	height: 0 !important;
+}
+
+.mobile-menu-area .mean-container a.meanmenu-reveal span {
+	background: #101010 !important;
+}
+
+.mobile-menu-area .mean-container a.meanmenu-reveal:hover span {
+	background: #1c4274 !important;
+}
+
+/* Home hero (phone / tablet): image on top, full-bleed, zero margin/padding on image */
+@media (max-width: 991px) {
+	.slider_list.shay-home-hero .slider-area.one .container-fluid {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.slider_list.shay-home-hero .slider-area.one .row.bor-der {
+		display: flex !important;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		margin: 0 !important;
+		padding: 0 !important;
+		border: none !important;
+	}
+
+	/* Image column first (was second in DOM) */
+	.slider_list.shay-home-hero .slider-area.one .row.bor-der > .col-lg-6:nth-child(2) {
+		order: -1;
+		width: 100% !important;
+		max-width: 100% !important;
+		flex: 0 0 100% !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		margin: 0 !important;
+	}
+
+	.slider_list.shay-home-hero .slider-area.one .row.bor-der > .col-lg-6:nth-child(1) {
+		order: 1;
+		width: 100% !important;
+		max-width: 100% !important;
+		flex: 0 0 100% !important;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.slider_list.shay-home-hero .slider-area.one .singles-sliders,
+	.slider_list.shay-home-hero .slider-area.one .singles-sliders .slider-content {
+		margin: 0 !important;
+		padding: 0 !important;
+		max-width: none !important;
+	}
+
+	.slider_list.shay-home-hero .slider-area.one .slider-thumb {
+		display: block !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		width: 100% !important;
+		line-height: 0;
+	}
+
+	.slider_list.shay-home-hero .slider-area.one .slider-thumb img {
+		display: block !important;
+		width: 100% !important;
+		height: 50vh !important;
+		min-height: 280px !important;
+		max-height: 640px !important;
+		object-fit: cover !important;
+		object-position: center !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		border-radius: 0 !important;
+		vertical-align: top;
+	}
+
+	.slider_list.shay-home-hero .slider-area.one .single-slider-left {
+		margin-top: 20px !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		left: 0 !important;
+	}
+
+	.slider_list.shay-home-hero .slider-area.one.upper .single-slider {
+		padding: 12px 0 40px 0 !important;
+	}
+}
+
+/* Custom cursor — hide on phones, tablets, and any coarse / no-hover pointer */
+@media (max-width: 991px), (hover: none), (pointer: coarse) {
+	body .curser,
+	body .curser2 {
+		display: none !important;
+		visibility: hidden !important;
+		opacity: 0 !important;
+		pointer-events: none !important;
+	}
+}
+
+/* Shay — center “View all projects”; theme offsets it with absolute + negative margin */
+@media (max-width: 991px) {
+	.project-area.one .projects-btn,
+	.project-area.one.upper .projects-btn {
+		display: flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+		width: 100% !important;
+		padding: 8px 16px 24px !important;
+		text-align: center !important;
+	}
+
+	.project-area.one .projects-btn a,
+	.project-area.one.upper .projects-btn a {
+		position: relative !important;
+		left: auto !important;
+		right: auto !important;
+		margin: 24px 0 0 !important;
+		transform: none !important;
+	}
+}
+
+/* Shay — section headings on mobile / tablet (slightly smaller than previous bump) */
+@media (max-width: 991px) {
+	.section-title.upper .main-title h1 {
+		font-size: clamp(42px, 11vw, 78px) !important;
+		line-height: 0.9 !important;
+	}
+
+	.section-title.upper .sub-title h2 {
+		font-size: clamp(20px, 3.8vw + 0.55rem, 32px) !important;
+		line-height: 1.2 !important;
+		top: clamp(-36px, -8.5vw, -48px) !important;
+	}
+}
+
+/* Preloader must sit above header & mobile mean-bar (both use z-index ~999) */
+.loader-wrapper {
+	z-index: 999999 !important;
+}

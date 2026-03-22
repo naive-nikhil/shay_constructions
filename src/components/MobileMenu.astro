@@ -1,7 +1,10 @@
 ---
-/* Main site nav only (no template shop/blog/portfolio submenus). */
+/* Main site nav only. Logo is a real link to home (mean-bar ::before cannot be clickable). */
 ---
-<div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none ">
+<div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none shay-mobile-nav-wrap">
+	<a href="/" class="shay-mobile-logo-link" aria-label="Shay Construction home">
+		<img src="/assets/images/shay_logo.png" alt="Shay Construction" width="168" height="56" />
+	</a>
 	<div class="mobile-menu">
 		<nav class="hendre_menu">
 			<ul class="nav_scroll">

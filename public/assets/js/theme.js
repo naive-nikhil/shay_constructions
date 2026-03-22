@@ -670,14 +670,14 @@
 
 
 
-    //curseer animation
-
+    // Custom cursor — desktop / fine pointer only (no touch phones / tablets)
         var curser = document.querySelector(".curser");
         var curser2 = document.querySelector(".curser2");
-    
-        document.addEventListener("mousemove", function(e){
-            curser.style.cssText = curser2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-        });
+        if (curser && curser2 && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+            document.addEventListener("mousemove", function (e) {
+                curser.style.cssText = curser2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+            });
+        }
     
 
 
