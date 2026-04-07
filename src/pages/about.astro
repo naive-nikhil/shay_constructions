@@ -302,6 +302,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						<span>Supply Chain Management</span>
 					</div>
 				</div>
+
+				<div class="shay-team-card wow fadeInUp"
+					data-name="Jitendra Kumar"
+					data-role="Mechanical, Electrical &amp; Plumbing (MEP)"
+					data-desc="Jitendra Kumar (Anoop) leads SCPL’s Mechanical, Electrical &amp; Plumbing (MEP) function, overseeing design coordination, installation quality, and handover across projects. He ensures HVAC, power distribution, plumbing, drainage, and fire-fighting systems are planned and executed to code, aligned with architectural and structural work, and delivered on schedule. With a hands-on approach to site execution and vendor coordination, he bridges consultants, contractors, and project teams so MEP services remain reliable, efficient, and maintainable long after completion."
+					data-img="https://res.cloudinary.com/dinzuxodt/image/upload/v1775553719/anoop_bhaiya_riorrt.jpg">
+					<div class="shay-team-img">
+						<img src="https://res.cloudinary.com/dinzuxodt/image/upload/v1775553719/anoop_bhaiya_riorrt.jpg" alt="Jitendra Kumar">
+					</div>
+					<div class="shay-team-label">
+						<h3>Jitendra Kumar</h3>
+						<span>Mechanical Electrical Plumbing</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -407,28 +421,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </div>
 
 <style is:global>
-/* ===== Team Grid (default state) ===== */
+/* ===== Team grid: 3 columns × auto rows (row 1: three cards, row 2: two cards) ===== */
 .shay-team-grid {
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	gap: 30px;
-}
-
-/* Row 1: three equal cards; row 2: two cards centered (empty half-column each side) */
-.shay-team-card:nth-child(1) {
-	grid-column: 1 / 3;
-}
-.shay-team-card:nth-child(2) {
-	grid-column: 3 / 5;
-}
-.shay-team-card:nth-child(3) {
-	grid-column: 5 / 7;
-}
-.shay-team-card:nth-child(4) {
-	grid-column: 2 / 4;
-}
-.shay-team-card:nth-child(5) {
-	grid-column: 4 / 6;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: clamp(20px, 3vw, 30px);
 }
 
 .shay-team-card {
@@ -685,14 +682,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 /* --- Responsive --- */
 @media (max-width: 991px) {
 	.shay-team-grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
-	.shay-team-card:nth-child(1),
-	.shay-team-card:nth-child(2),
-	.shay-team-card:nth-child(3),
-	.shay-team-card:nth-child(4),
-	.shay-team-card:nth-child(5) {
-		grid-column: auto;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 	.shay-overlay-inner {
 		padding: max(48px, env(safe-area-inset-top, 0px) + 40px) 24px 32px;

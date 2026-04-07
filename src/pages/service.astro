@@ -136,6 +136,58 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		</div>
 	</section>
 
+	<section class="shay-mep-section upper">
+		<div class="container position-relative">
+			<div class="row align-items-center">
+				<div class="col-lg-12">
+					<div class="section-title upper pb-3">
+						<div class="main-title wow fadeInUp">
+							<h1>MEP</h1>
+						</div>
+						<div class="sub-title wow fadeInUp" data-wow-delay="0.1s">
+							<h2>Mechanical, Electrical <span>&amp; Plumbing</span></h2>
+						</div>
+					</div>
+					<div class="shay-mep-shape1 bounce-animate3">
+						<img src="/assets/images/resource/counter-shape.png" alt="">
+					</div>
+					<div class="shay-mep-shape2 bounce-animate2">
+						<img src="/assets/images/resource/counter-shap.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center shay-mep-content">
+				<div class="col-lg-6">
+					<div class="shay-mep-media wow fadeInLeft" data-wow-delay="0.1s">
+						<img
+							src="https://www.monarch-innovation.com/wp-content/uploads/2021/06/MEP.jpg"
+							alt="Mechanical, electrical and plumbing systems"
+							loading="lazy"
+							width="800"
+							height="600"
+						/>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="shay-mep-copy wow fadeInRight" data-wow-delay="0.15s">
+						<p class="shay-mep-lead">
+							We integrate high-performance building systems that ensure safety, comfort, and efficiency. Our MEP solutions emphasize sustainable engineering and seamless integration — the vital life-support systems modern structures depend on.
+						</p>
+						<p>
+							Our MEP leadership oversees design coordination, installation quality, and handover across projects: HVAC, power distribution, plumbing, drainage, and fire-fighting systems are planned and executed to code, aligned with architectural and structural work, and delivered on schedule — with consultants, contractors, and site teams working as one.
+						</p>
+						<ul class="shay-mep-list" aria-label="MEP scope">
+							<li><i class="bi bi-check-lg" aria-hidden="true"></i> HVAC &amp; climate control</li>
+							<li><i class="bi bi-check-lg" aria-hidden="true"></i> Electrical &amp; power distribution</li>
+							<li><i class="bi bi-check-lg" aria-hidden="true"></i> Plumbing, drainage &amp; fire protection</li>
+							<li><i class="bi bi-check-lg" aria-hidden="true"></i> Design coordination, testing &amp; commissioning</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!--==================================================-->
 	<!-- Start counter area -->
 	<!--==================================================-->
@@ -531,6 +583,145 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	}
 	.shay-services-section {
 		padding: 70px 0 80px;
+	}
+}
+
+/* MEP section (below services grid) */
+.shay-mep-section {
+	padding: 90px 0 110px;
+	background: #f8f9fb;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.shay-mep-content {
+	margin-top: 8px;
+	position: relative;
+	z-index: 2;
+}
+
+.shay-mep-shape1 {
+	position: absolute;
+	top: 50px;
+	right: 3%;
+	z-index: 0;
+	opacity: 0.11;
+	pointer-events: none;
+}
+
+.shay-mep-shape1 img {
+	max-width: 100px;
+	height: auto;
+}
+
+.shay-mep-shape2 {
+	position: absolute;
+	bottom: 80px;
+	left: 2%;
+	z-index: 0;
+	opacity: 0.09;
+	pointer-events: none;
+}
+
+.shay-mep-shape2 img {
+	max-width: 90px;
+	height: auto;
+}
+
+.shay-mep-media {
+	overflow: hidden;
+	border-radius: 2px;
+	border: 1px solid #e9ebec;
+	background: #fff;
+	line-height: 0;
+}
+
+.shay-mep-media img {
+	width: 100%;
+	height: auto;
+	display: block;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	object-position: center;
+}
+
+.shay-mep-copy {
+	padding-left: 0;
+}
+
+@media (min-width: 992px) {
+	.shay-mep-copy {
+		padding-left: 12px;
+	}
+}
+
+.shay-mep-lead {
+	font-size: 16px;
+	line-height: 1.8;
+	color: #444;
+	margin: 0 0 18px;
+	font-weight: 500;
+}
+
+.shay-mep-copy p {
+	font-size: 15px;
+	line-height: 1.8;
+	color: #555;
+	margin: 0 0 16px;
+}
+
+.shay-mep-list {
+	list-style: none;
+	margin: 22px 0 0;
+	padding: 0;
+}
+
+.shay-mep-list li {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	font-size: 14px;
+	line-height: 1.55;
+	color: #444;
+	margin-bottom: 12px;
+	font-weight: 500;
+}
+
+.shay-mep-list li:last-child {
+	margin-bottom: 0;
+}
+
+.shay-mep-list .bi-check-lg {
+	flex-shrink: 0;
+	margin-top: 2px;
+	color: #1c4274;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+@media (max-width: 991px) {
+	.shay-mep-section {
+		padding: 70px 0 85px;
+	}
+
+	.shay-mep-shape1,
+	.shay-mep-shape2 {
+		display: none;
+	}
+
+	.shay-mep-media {
+		margin-bottom: 32px;
+	}
+
+	.shay-mep-copy {
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 575px) {
+	.shay-mep-section {
+		padding: 56px 0 70px;
 	}
 }
 </style>
